@@ -5,12 +5,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Foster Studio</title>
-  <style>.portfolio-card img {
+  <style>
+/* FOSTER STUDIO PORTFOLIO */
+
+.portfolio {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 30px;
+  color: #00c8ff;
+  margin-bottom: 10px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+.portfolio-card {
+  background: #202020;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px);
+}
+
+.portfolio-card img {
   width: 100%;
-  height: 200px;
+  height: 350px;
   object-fit: cover;
   display: block;
-  border-radius: 12px 12px 0 0;
+}
+
+.portfolio-card h3 {
+  color: #00c8ff;
+  margin: 18px 10px 8px;
+}
+
+.portfolio-card p {
+  color: white;
+  padding: 0 12px 15px;
+}
+  
 }
     body {
       margin: 0;
@@ -112,35 +156,45 @@
     <h3>Flyer Design</h3>
     <p>Beautiful flyers and posters.</p>
   </div>
+
 <section class="portfolio">
+
   <h2>Our Portfolio</h2>
-  <p>Explore some of our creative services.</p>
+  <p>Explore some of our creative work.</p>
 
   <div class="portfolio-grid">
 
-  <div class="portfolio-card">
-    <img src="photo design.png" alt="Photo Editing.png">
-    <h3>Photo Editing</h3>
-    <p>Creative photo enhancement.</p>
-  </div>
+    <div class="portfolio-card">
+      <img src="photo-sample.png"
+           alt="Photo Editing Sample">
+      <h3>Photo Editing</h3>
+      <p>Creative photo enhancement.</p>
+    </div>
 
-  <div class="portfolio-card">
-    <img src="logo design.png" alt="Logo Design.png">
-    <h3>Logo Design</h3>
-    <p>Unique brand identities.</p>
-  </div>
+    <div class="portfolio-card">
+      <img src="logo-sample.png"
+           alt="Foster Studio Logo">
+      <h3>Logo Design</h3>
+      <p>Unique brand identities.</p>
+    </div>
 
-  <div class="portfolio-card">
-    <img src="flyer design.png" alt="Flyer Design.png">
-    <h3>Flyer Design</h3>
-    <p>Professional promotional designs.</p>
-  </div>
+    <div class="portfolio-card">
+      <img src="flyer-sample.png"
+           alt="Summer Vibes Flyer">
+      <h3>Flyer Design</h3>
+      <p>Professional promotional designs.</p>
+    </div>
 
-  <div class="portfolio-card">
-    <img src="poster design.png" alt="Poster Design.png">
-    <h3>Poster Design</h3>
-    <p>Creative event posters.</p>
+    <div class="portfolio-card">
+      <img src="poster-sample.png"
+           alt="Barcelona Poster">
+      <h3>Poster Design</h3>
+      <p>Creative event posters.</p>
+    </div>
+
   </div>
+</section>
+  
 
   </div>
     <div class="portfolio-card">
