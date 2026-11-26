@@ -398,7 +398,7 @@ const supabaseClient = window.supabase.createClient(
 
 async function createAccount() {
   const email = document.getElementById("customer-email").value;
-  const password = document.getElementById("customer-password").value;
+  const password = document.getElementById("customer-password").value
 
   const { error } = await supabaseClient.auth.signUp({
     email,
@@ -415,7 +415,8 @@ async function loginAccount() {
 
   const { error } = await supabaseClient.auth.signInWithPassword({
     email,
-    password
+    password,
+    confirmpassword 
   });
 
   document.getElementById("account-message").textContent =
