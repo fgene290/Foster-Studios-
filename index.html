@@ -361,6 +361,75 @@ footer {
 }
 </style>
   
+<section id="customer-account" class="order-section">
+  <h2>Customer Account</h2>
+  <p>Create an account or log in to Foster Studio.</p>
+
+  <input id="customer-email" type="email"
+    placeholder="Your email address">
+
+  <input id="customer-password" type="password"
+    placeholder="Your password">
+
+  <div style="margin-top:15px">
+    <button type="button" class="order-btn"
+      onclick="createAccount()">Create Account</button>
+
+    <button type="button" class="order-btn"
+      onclick="loginAccount()">Log In</button>
+
+    <button type="button" class="order-btn"
+      onclick="logoutAccount()">Log Out</button>
+  </div>
+
+  <p id="account-message" aria-live="polite"></p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://dyexenkmuafnduxpnsxg.supabase.co/rest/v1/";
+const SUPABASE_KEY = "sb_publishable_jNxP3HPA4__Y-5SKEpdS3g_-OI2wYmi";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+async function createAccount() {
+  const email = document.getElementById("customer-email").value;
+  const password = document.getElementById("customer-password").value;
+
+  const { error } = await supabaseClient.auth.signUp({
+    email,
+    password
+  });
+
+  document.getElementById("account-message").textContent =
+    error ? error.message : "Account created. Check your email to confirm it.";
+}
+
+async function loginAccount() {
+  const email = document.getElementById("customer-email").value;
+  const password = document.getElementById("customer-password").value;
+
+  const { error } = await supabaseClient.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  document.getElementById("account-message").textContent =
+    error ? error.message : "You are logged in successfully.";
+}
+
+async function logoutAccount() {
+  const { error } = await supabaseClient.auth.signOut();
+
+  document.getElementById("account-message").textContent =
+    error ? error.message : "You have logged out.";
+}
+  </script>
+  
 </body>
   </html>
         
