@@ -334,31 +334,218 @@ footer {
 </section>
 
 <style>
-.order-section {
-  text-align: center;
-  padding: 60px 20px;
-  background: #101b2b;
-  color: white;
+
+:root {
+  --bg: #050914;
+  --surface: #0c1628;
+  --surface-light: #111f35;
+  --blue: #00aaff;
+  --blue-glow: rgba(0, 170, 255, 0.25);
+  --white: #f5f8ff;
+  --muted: #9aaac0;
 }
 
-.order-section h2 {
-  color: #00d9ff;
-  font-size: 30px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.order-section p {
-  margin: 15px 0 25px;
+html {
+  scroll-behavior: smooth;
 }
 
-.order-btn {
-  display: inline-block;
-  background: #00d9ff;
-  color: #07111f;
-  padding: 14px 28px;
-  border-radius: 8px;
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+header {
+  background: rgba(5, 9, 20, 0.95);
+  border-bottom: 1px solid rgba(0, 170, 255, 0.2);
+  padding: 18px 7%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(14px);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav a {
+  color: var(--white);
   text-decoration: none;
-  font-weight: bold;
+  margin: 0 10px;
+  transition: 0.3s;
 }
+
+nav a:hover {
+  color: var(--blue);
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  margin-bottom: 20px;
+}
+
+p {
+  color: var(--muted);
+}
+
+section {
+  padding: 85px 7%;
+}
+
+.hero {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(0,170,255,.16), transparent 35%),
+    linear-gradient(135deg, #050914, #0a1930);
+}
+
+.hero h1 span,
+.highlight {
+  color: var(--blue);
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 20px 0 28px;
+  font-size: 1.1rem;
+}
+
+button,
+.btn,
+a.button {
+  display: inline-block;
+  background: var(--blue);
+  color: #00101d;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 25px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover,
+.btn:hover,
+a.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 22px var(--blue-glow);
+}
+
+.services,
+.portfolio {
+  text-align: center;
+}
+
+.service-grid,
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  margin-top: 35px;
+}
+
+.service-card,
+.portfolio-item,
+.card {
+  background: var(--surface);
+  border: 1px solid rgba(0, 170, 255, 0.16);
+  border-radius: 14px;
+  padding: 25px;
+  transition: 0.3s;
+}
+
+.service-card:hover,
+.portfolio-item:hover,
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--blue);
+  box-shadow: 0 8px 30px var(--blue-glow);
+}
+
+.portfolio-item img,
+.portfolio-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 13px;
+  margin: 10px 0;
+  background: var(--surface-light);
+  color: var(--white);
+  border: 1px solid #263c58;
+  border-radius: 8px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 10px var(--blue-glow);
+}
+
+footer {
+  background: #030711;
+  border-top: 1px solid rgba(0,170,255,.2);
+  padding: 30px 7%;
+  text-align: center;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 15px 5%;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  section {
+    padding: 60px 5%;
+  }
+
+  .hero {
+    min-height: 65vh;
+  }
+  }
+  
 </style>
   
 <section id="customer-account" class="order-section">
